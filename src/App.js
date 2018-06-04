@@ -1,6 +1,6 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import constants from './constants';
 import Terminal from './components/terminal';
@@ -8,7 +8,7 @@ import userActions from './store/actions/user';
 
 import './styles.css';
 
-class App extends Component {
+class App extends PureComponent {
   componentWillMount() {
     this.props.actions.user.move(constants.SCENE.OUTSIDE_OFFICE_WEST);
   }
