@@ -1,5 +1,6 @@
 {
   "name": "day-one-adventure",
+  "homepage": "http://gor.do/day-one-adventure",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
