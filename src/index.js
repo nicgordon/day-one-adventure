@@ -2,11 +2,12 @@ import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import App from './app';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store';
 
-import './index.css';
+import './styles/reset.css';
+import './styles/base.css';
 
 ReactDOM.render(
   <Provider store={store}>

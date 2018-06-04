@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 
 import constants from './constants';
-import TerminalOutput from './components/terminal-output';
+import Terminal from './components/terminal';
 import userActions from './store/actions/user';
 
-import './App.css';
+import './styles.css';
 
 class App extends Component {
   componentWillMount() {
@@ -15,8 +15,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <TerminalOutput />
+      <div className="app">
+        <Terminal />
       </div>
     );
   }
