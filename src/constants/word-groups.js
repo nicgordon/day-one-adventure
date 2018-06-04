@@ -8,6 +8,7 @@ const wordGroups = {
     DESCEND: 'descend|go down|go upstairs',
     GET: 'acquire|get|grab|take',
     MOVE: 'go|move|run|walk|traverse',
+    OPEN: 'open',
   },
 };
 
