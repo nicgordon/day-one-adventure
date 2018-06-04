@@ -1,0 +1,9 @@
+const actions = {
+  GAME_PUSH_MESSAGE: 'GAME_PUSH_MESSAGE',
+  SCENE_UPDATE: 'SCENE_UPDATE',
+  USER_ADD_ITEM: 'USER_ADD_ITEM',
+  USER_MOVE: 'USER_MOVE',
+  USER_REMOVE_ITEM: 'USER_REMOVE_ITEM',
+};
+
+export default actions;
