@@ -1,10 +1,10 @@
 import constants from '../../constants';
 
 const initialState = {
-  location: constants.SCENE.OUTSIDE_OFFICE_EAST,
+  location: constants.SCENE.OUTSIDE_OFFICE,
 };
 
-const user = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   const reducers = {
     [constants.ACTION.USER_MOVE]: () => ({
       ...state,
@@ -15,4 +15,4 @@ const user = (state = initialState, action) => {
   return reducers[action.type] ? reducers[action.type]() : state;
 };
 
-export default user;
+export default userReducer;

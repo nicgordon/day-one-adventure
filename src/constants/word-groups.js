@@ -10,6 +10,7 @@ const wordGroups = {
     MEOW: 'meow',
     MOVE: 'go|move|run|walk|traverse',
     OPEN: 'open',
+    ORDER: 'ask|get|order',
   },
 };
 

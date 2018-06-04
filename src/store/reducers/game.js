@@ -5,10 +5,10 @@ const addCommandToLog = (log, command) => `${log}<span class="command">&gt; ${co
 const addMessageToLog = (log, message) => `${log}&gt; ${message}<br /><br />`;
 
 const initialState = {
-  log: addMessageToLog('', scenes[constants.SCENE.OUTSIDE_OFFICE_EAST].getDescription()),
+  log: addMessageToLog('', scenes[constants.SCENE.OUTSIDE_OFFICE].getDescription()),
 };
 
-const game = (state = initialState, action) => {
+const gameReducer = (state = initialState, action) => {
   const reducers = {
     [constants.ACTION.GAME_SUBMIT_COMMAND]: () => ({
       ...state,
@@ -29,4 +29,4 @@ const game = (state = initialState, action) => {
   return reducers[action.type] ? reducers[action.type]() : state;
 };
 
-export default game;
+export default gameReducer;
