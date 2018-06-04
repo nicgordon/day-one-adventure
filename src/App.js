@@ -1,21 +1,34 @@
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import constants from './constants';
+import TerminalOutput from './components/terminal-output';
+import userActions from './store/actions/user';
+
 import './App.css';
 
 class App extends Component {
+  componentWillMount() {
+    this.props.actions.user.move(constants.SCENE.OUTSIDE_OFFICE_WEST);
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <TerminalOutput />
       </div>
     );
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  actions: {
+    user: bindActionCreators(userActions, dispatch),
+  },
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);
