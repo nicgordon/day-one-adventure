@@ -56,7 +56,7 @@ class TerminalInput extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  sceneId: state.user.location,
+  sceneId: state.present.user.location,
   state,
 });
 

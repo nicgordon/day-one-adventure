@@ -13,7 +13,7 @@ const Terminal = ({ log }) => (
 );
 
 const mapStateToProps = state => ({
-  log: state.game.log,
+  log: state.present.game.log,
 });
 
 export default connect(mapStateToProps)(Terminal);

@@ -1,6 +1,8 @@
 import constants from '../../constants';
 
-const initialState = {};
+const initialState = {
+  [constants.SCENE.OUTSIDE_OFFICE_EAST]: '',
+};
 
 const scenes = (state = initialState, action) => {
   const reducers = {

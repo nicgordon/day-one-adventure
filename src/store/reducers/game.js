@@ -1,12 +1,12 @@
 import constants from '../../constants';
 import scenes from '../../scenes';
 
-const initialState = {
-  log: '',
-};
-
 const addCommandToLog = (log, command) => `${log}<span class="command">&gt; ${command}</span><br />`;
 const addMessageToLog = (log, message) => `${log}&gt; ${message}<br /><br />`;
+
+const initialState = {
+  log: addMessageToLog('', scenes[constants.SCENE.OUTSIDE_OFFICE_EAST].getDescription()),
+};
 
 const game = (state = initialState, action) => {
   const reducers = {

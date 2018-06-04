@@ -1,7 +1,7 @@
 import constants from '../../constants';
 
 const initialState = {
-  location: null,
+  location: constants.SCENE.OUTSIDE_OFFICE_EAST,
 };
 
 const user = (state = initialState, action) => {
