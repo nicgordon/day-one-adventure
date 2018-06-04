@@ -1,5 +1,5 @@
 const scenes = {
-  OUTSIDE_OFFICE_WEST: 'outside-office-west',
+  OUTSIDE_OFFICE_EAST: 'outside-office-east',
 };
 
 export default scenes;

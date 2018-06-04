@@ -10,7 +10,7 @@ import './styles.css';
 
 class App extends PureComponent {
   componentWillMount() {
-    this.props.actions.user.move(constants.SCENE.OUTSIDE_OFFICE_WEST);
+    this.props.actions.user.move(constants.SCENE.OUTSIDE_OFFICE_EAST);
   }
 
   render() {
