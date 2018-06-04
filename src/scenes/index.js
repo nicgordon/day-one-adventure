@@ -1,6 +1,8 @@
+import all from './all';
 import constants from '../constants';
-import outsideOfficeWest from './outside-office-west';
+import outsideOfficeEast from './outside-office-east';
 
 export default {
-  [constants.SCENE.OUTSIDE_OFFICE_EAST]: outsideOfficeWest,
+  all,
+  [constants.SCENE.OUTSIDE_OFFICE_EAST]: outsideOfficeEast,
 };

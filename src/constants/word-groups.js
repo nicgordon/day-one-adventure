@@ -7,6 +7,7 @@ const wordGroups = {
     CONTACT: 'call|contact|ring|telephone',
     DESCEND: 'descend|go down|go upstairs',
     GET: 'acquire|get|grab|take',
+    MEOW: 'meow',
     MOVE: 'go|move|run|walk|traverse',
     OPEN: 'open',
   },
