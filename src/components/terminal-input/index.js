@@ -25,8 +25,8 @@ class TerminalInput extends PureComponent {
 
     const { actions, dispatch, sceneId, state } = this.props;
 
-    const command = this.input.current.value;
-    if (_.isEmpty(_.trim(command))) {
+    const command = _.trim(_.toLower(this.input.current.value));
+    if (_.isEmpty(command)) {
       return;
     }
     actions.game.submitCommand(command);
@@ -34,11 +34,11 @@ class TerminalInput extends PureComponent {
     // Allow the interaction to do its damage
     const interaction = validateCommand(command, sceneId);
     if (interaction) {
-      interaction.action(state, dispatch);
+      interaction.action(state, dispatch, command);
     } else {
       // Check if it is at least a known command
       actions.game.pushMessage(
-        new RegExp(`^(${constants.WORD_GROUP.VERB.ALL})`).test(_.trim(_.toLower(command)))
+        new RegExp(`^(${constants.WORD_GROUP.VERB.ALL})`).test(command)
           ? 'You can’t do this here.'
           : 'This command is utter nonsense.'
       );
