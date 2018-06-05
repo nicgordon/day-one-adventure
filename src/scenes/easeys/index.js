@@ -4,9 +4,11 @@ import interactions from './interactions';
 export default {
   id: constants.SCENE.EASEYS,
   name: 'Easeys',
-  defaultState: {},
+  defaultState: {
+    inventory: [],
+  },
   interactions,
-  getDescription: gameState =>
+  getDescription: state =>
     `As it turns out, the train car park is actually a burger restaurant called Easey’s.
   Delicious flame grilled burger smells fill the air. Their menu includes a burger with
   dim sims in it.`,

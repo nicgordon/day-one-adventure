@@ -1,8 +1,9 @@
+import _ from 'lodash';
 import constants from '../../constants';
 import scenes from '../../scenes';
 
 const initialState = {
-  [constants.SCENE.OUTSIDE_OFFICE]: '',
+  [constants.SCENE.OUTSIDE_OFFICE]: scenes[constants.SCENE.OUTSIDE_OFFICE].defaultState,
 };
 
 const scenesReducer = (state = initialState, action) => {
@@ -24,6 +25,20 @@ const scenesReducer = (state = initialState, action) => {
         ...state,
         [action.destination]: scenes[action.destination].defaultState,
       };
+    },
+
+    [constants.ACTION.USER_TAKE_ITEM]: () => {
+      if (action.donorType === constants.TYPE.SCENE && _.includes(state[action.donorId].inventory, action.itemId)) {
+        const sceneState = {
+          ...state[action.donorId],
+          inventory: _.without(state[action.donorId].inventory, action.itemId),
+        };
+
+        return {
+          ...state,
+          [action.donorId]: sceneState,
+        };
+      }
     },
   };
 

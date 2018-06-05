@@ -8,6 +8,7 @@ export default {
   defaultState: {
     doorOpen: false,
     rollerDoorOpen: false,
+    inventory: [],
   },
   interactions,
   getDescription: state => {
