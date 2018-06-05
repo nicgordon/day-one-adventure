@@ -6,6 +6,7 @@ const wordGroups = {
     CHECK: 'check|inspect|look at|read',
     CONTACT: 'call|contact|ring|telephone',
     DESCEND: 'descend|go down|go upstairs',
+    DESCRIBE: 'describe',
     ENTER: 'enter|go in',
     GET: 'acquire|get|grab|take',
     MEOW: 'meow',
