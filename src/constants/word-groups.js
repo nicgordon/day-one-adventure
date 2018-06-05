@@ -10,7 +10,7 @@ const wordGroups = {
     ENTER: 'enter|go in',
     GET: 'acquire|get|grab|take',
     MEOW: 'meow',
-    MOVE: 'go|move|run|walk|traverse',
+    MOVE: 'go|move|run|walk',
     OPEN: 'open',
     ORDER: 'ask for|buy|get|order',
     RING: 'ring',
