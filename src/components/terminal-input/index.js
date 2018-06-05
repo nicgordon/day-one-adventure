@@ -26,6 +26,9 @@ class TerminalInput extends PureComponent {
     const { actions, dispatch, sceneId, state } = this.props;
 
     const command = this.input.current.value;
+    if (_.isEmpty(_.trim(command))) {
+      return;
+    }
     actions.game.submitCommand(command);
 
     // Allow the interaction to do its damage
