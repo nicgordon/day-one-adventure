@@ -11,7 +11,7 @@ const wordGroups = {
     MEOW: 'meow',
     MOVE: 'go|move|run|walk|traverse',
     OPEN: 'open',
-    ORDER: 'ask|buy|get|order',
+    ORDER: 'ask for|buy|get|order',
     WAIT: 'wait',
   },
 };
