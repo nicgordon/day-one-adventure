@@ -6,6 +6,7 @@ export default {
   id: constants.SCENE.OUTSIDE_OFFICE,
   name: 'Outside Inlight HQ',
   defaultState: {
+    doorOpen: false,
     rollerDoorOpen: false,
   },
   interactions,
@@ -24,7 +25,7 @@ export default {
     In front of you is an extremely shabby building covered in graffiti and torn posters.
     ${
       rollerDoorOpen
-        ? 'With the roller door up a glass facade greets you and through it you can see a neon sign glowing. There’s a keypad beside the door.'
+        ? 'With the roller door up a glass facade greets you and through it you can see a neon sign glowing. There’s a doorbell beside the glass door.'
         : 'The building appears to be double storey with a roller door covering the entrance.'
     }
     To the south is a carpark and to the north ${
