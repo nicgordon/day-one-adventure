@@ -2,7 +2,7 @@ import constants from '../../constants';
 import scenes from '../../scenes';
 
 const addCommandToLog = (log, command) => `${log}<span class="command">&gt; ${command}</span><br />`;
-const addMessageToLog = (log, message) => `${log}&gt; ${message}<br /><br />`;
+const addMessageToLog = (log, message) => `${log}${message}<br /><br />`;
 
 const initialState = {
   log: addMessageToLog('', scenes[constants.SCENE.OUTSIDE_OFFICE].getDescription()),
@@ -24,7 +24,10 @@ const gameReducer = (state = initialState, action) => {
 
     [constants.ACTION.USER_MOVE]: () => ({
       ...state,
-      log: addMessageToLog(state.log, action.description),
+      log: addMessageToLog(
+        state.log,
+        `<strong class="sceneName">${scenes[action.destination].name}</strong><br />${action.description}`
+      ),
     }),
   };
 
