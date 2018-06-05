@@ -16,6 +16,7 @@ const wordGroups = {
     RING: 'ring',
     USE: 'interact with|use',
     WAIT: 'wait',
+    YELL: 'call out|shout|yell',
   },
 };
 
