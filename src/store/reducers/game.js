@@ -6,6 +6,7 @@ const addMessageToLog = (log, message) => `${log}&gt; ${message}<br /><br />`;
 
 const initialState = {
   log: addMessageToLog('', scenes[constants.SCENE.OUTSIDE_OFFICE].getDescription()),
+  moves: 0,
 };
 
 const gameReducer = (state = initialState, action) => {
@@ -13,6 +14,7 @@ const gameReducer = (state = initialState, action) => {
     [constants.ACTION.GAME_SUBMIT_COMMAND]: () => ({
       ...state,
       log: addCommandToLog(state.log, action.command),
+      moves: state.moves + 1,
     }),
 
     [constants.ACTION.GAME_PUSH_MESSAGE]: () => ({
@@ -22,7 +24,7 @@ const gameReducer = (state = initialState, action) => {
 
     [constants.ACTION.USER_MOVE]: () => ({
       ...state,
-      log: addMessageToLog(state.log, scenes[action.destination].getDescription(state)),
+      log: addMessageToLog(state.log, action.description),
     }),
   };
 

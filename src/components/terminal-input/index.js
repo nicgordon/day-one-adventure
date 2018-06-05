@@ -35,7 +35,7 @@ class TerminalInput extends PureComponent {
     } else {
       // Check if it is at least a known command
       actions.game.pushMessage(
-        new RegExp(`^(${constants.WORD_GROUP.VERB.ALL})`).test(_.toLower(command))
+        new RegExp(`^(${constants.WORD_GROUP.VERB.ALL})`).test(_.trim(_.toLower(command)))
           ? 'You can’t do this here.'
           : 'This command is utter nonsense.'
       );
