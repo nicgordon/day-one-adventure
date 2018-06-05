@@ -49,7 +49,14 @@ class TerminalInput extends PureComponent {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
         <span>&gt;&nbsp;</span>
-        <input className="input" ref={this.input} type="text" />
+        <input
+          className="input"
+          onBlur={() => {
+            this.input.current.focus();
+          }}
+          ref={this.input}
+          type="text"
+        />
       </form>
     );
   }
