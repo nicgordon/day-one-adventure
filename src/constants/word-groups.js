@@ -13,6 +13,8 @@ const wordGroups = {
     MOVE: 'go|move|run|walk|traverse',
     OPEN: 'open',
     ORDER: 'ask for|buy|get|order',
+    RING: 'ring',
+    USE: 'interact with|use',
     WAIT: 'wait',
   },
 };
