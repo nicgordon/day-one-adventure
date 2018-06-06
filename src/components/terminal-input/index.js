@@ -3,9 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import React, { PureComponent } from 'react';
 
-import constants from '../../constants';
 import gameActions from '../../store/actions/game';
-import validateCommand from '../../utils/validate-command';
+import executeCommand from '../../utils/execute-command';
 
 import './styles.css';
 
@@ -23,26 +22,14 @@ class TerminalInput extends PureComponent {
   handleSubmit(event) {
     event.preventDefault();
 
-    const { actions, dispatch, sceneId, state } = this.props;
+    const { actions, dispatch, state } = this.props;
 
     const command = _.trim(_.toLower(this.input.current.value));
     if (_.isEmpty(command)) {
       return;
     }
     actions.game.submitCommand(command);
-
-    // Allow the interaction to do its damage
-    const interaction = validateCommand(command, sceneId);
-    if (interaction) {
-      interaction.action(state, dispatch, command);
-    } else {
-      // Check if it is at least a known command
-      actions.game.pushMessage(
-        new RegExp(`^(${constants.WORD_GROUP.VERB.ALL})`).test(command)
-          ? 'You can’t do this here.'
-          : 'This command is utter nonsense.'
-      );
-    }
+    executeCommand(command, state, dispatch);
 
     // Reset
     this.input.current.value = '';
@@ -66,7 +53,6 @@ class TerminalInput extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  sceneId: state.present.user.location,
   state,
 });
 
