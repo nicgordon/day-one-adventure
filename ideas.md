@@ -1,5 +1,20 @@
+todo:
+ - moving anywhere you have already been
+ - people?
+ - stop script injection (strip out <> chars)
+ - eject and obfuscate code
+
+ - outside
+  * knock
+
+ - foyer
+  * go upstairs
+  * read book
+  * talk to plant
+
+
 start outside the office, roller door is closed
-get a burger to wait / or call @felicity
+get a burger to wait / or call @felicity (voice lulls you to sleep)
 come back to the office
 meet someone at the door
 go inside (can read books) (take book, handwritten note inside, with a puzzle) (can talk to plant)
