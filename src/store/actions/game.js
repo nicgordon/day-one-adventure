@@ -10,4 +10,9 @@ export default {
     type: constants.ACTION.GAME_SUBMIT_COMMAND,
     command,
   }),
+
+  toggleInteractiveMode: scene => ({
+    type: constants.ACTION.GAME_TOGGLE_INTERACTIVE_MODE,
+    scene,
+  }),
 };

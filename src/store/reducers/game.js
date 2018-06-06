@@ -5,6 +5,7 @@ const addCommandToLog = (log, command) => `${log}<span class="command">&gt; ${co
 const addMessageToLog = (log, message) => `${log}${message}<br /><br />`;
 
 const initialState = {
+  interactiveScene: null,
   log: addMessageToLog('', scenes[constants.SCENE.OUTSIDE_OFFICE].getDescription()),
   moves: 0,
 };
@@ -15,6 +16,11 @@ const gameReducer = (state = initialState, action) => {
       ...state,
       log: addCommandToLog(state.log, action.command),
       moves: state.moves + 1,
+    }),
+
+    [constants.ACTION.GAME_TOGGLE_INTERACTIVE_MODE]: () => ({
+      ...state,
+      interactiveScene: state.interactiveScene ? null : action.scene,
     }),
 
     [constants.ACTION.GAME_PUSH_MESSAGE]: () => ({
