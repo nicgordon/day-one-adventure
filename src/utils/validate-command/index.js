@@ -11,8 +11,6 @@ const validateCommand = (command, state) => {
     ? _.concat(interactiveScenes.preScene.interactions, interactiveScenes[interactiveSceneId].interactions)
     : _.concat(scenes[sceneId].interactions, scenes.postScene.interactions);
 
-  console.log(command, availableInteractions);
-
   const successfulInteraction = _.find(
     availableInteractions,
     interaction => (interaction.predicate ? interaction.predicate(state) : true) && interaction.pattern.test(command)
