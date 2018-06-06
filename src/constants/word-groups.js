@@ -14,6 +14,7 @@ const wordGroups = {
     OPEN: 'open',
     ORDER: 'ask for|buy|get|order',
     RING: 'ring',
+    TALK: 'talk( to|with)?|speak( to|with)?',
     USE: 'interact with|use',
     WAIT: 'wait',
     YELL: 'call out|shout|yell',
