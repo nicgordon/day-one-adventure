@@ -21,8 +21,9 @@ export default {
     dispatch(
       gameActions.pushMessage(`Okay! Well, let’s see how you went today:<br />
       You completed ${missionsCompleted} of the total ${missionsAvailable} tasks that were available.
-      ${summary}`)
+      ${summary}<br /><br /><span class="command">Game over!</span>`)
     );
     dispatch(gameActions.toggleInteractiveMode());
+    dispatch(gameActions.gameOver());
   },
 };

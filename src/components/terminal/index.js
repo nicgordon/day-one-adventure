@@ -16,12 +16,12 @@ class Terminal extends PureComponent {
   }
 
   render() {
-    const { log } = this.props;
+    const { gameOver, log } = this.props;
     return (
       <div className="terminalContainer" ref={this.container}>
         <div className="terminal">
           <div dangerouslySetInnerHTML={{ __html: log }} />
-          <TerminalInput />
+          {!gameOver && <TerminalInput />}
         </div>
       </div>
     );
@@ -29,6 +29,7 @@ class Terminal extends PureComponent {
 }
 
 const mapStateToProps = state => ({
+  gameOver: state.present.game.gameOver,
   log: state.present.game.log,
 });
 

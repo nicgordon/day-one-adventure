@@ -5,6 +5,7 @@ const addCommandToLog = (log, command) => `${log}<span class="command">&gt; ${co
 const addMessageToLog = (log, message) => `${log}${message}<br /><br />`;
 
 const initialState = {
+  gameOver: false,
   interactiveScene: null,
   log: addMessageToLog('', scenes[constants.SCENE.OUTSIDE_OFFICE].getDescription()),
   moves: 0,
@@ -12,6 +13,11 @@ const initialState = {
 
 const gameReducer = (state = initialState, action) => {
   const reducers = {
+    [constants.ACTION.GAME_OVER]: () => ({
+      ...state,
+      gameOver: true,
+    }),
+
     [constants.ACTION.GAME_SUBMIT_COMMAND]: () => ({
       ...state,
       log: addCommandToLog(state.log, action.command),

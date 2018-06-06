@@ -1,6 +1,10 @@
 import constants from '../../constants';
 
 export default {
+  gameOver: () => ({
+    type: constants.ACTION.GAME_OVER,
+  }),
+
   pushMessage: message => ({
     type: constants.ACTION.GAME_PUSH_MESSAGE,
     message,
