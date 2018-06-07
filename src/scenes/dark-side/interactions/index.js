@@ -1,4 +1,5 @@
+import giveLunchToWill from './give-lunch-to-will';
 import moveEast from './move-east';
 import talkToWill from './talk-to-will';
 
-export default [talkToWill, moveEast];
+export default [giveLunchToWill, talkToWill, moveEast];
