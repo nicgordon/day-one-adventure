@@ -10,7 +10,7 @@ export default {
     const rollerDoorOpen = _.get(state, `present.scenes[${constants.SCENE.OUTSIDE_OFFICE}].rollerDoorOpen`, false);
 
     if (doorOpen) {
-      dispatch(userActions.move(constants.SCENE.COMMON_AREA));
+      dispatch(userActions.move(constants.SCENE.FOYER));
       return;
     }
 
