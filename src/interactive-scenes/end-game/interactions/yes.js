@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import constants from '../../../constants';
 import gameActions from '../../../store/actions/game';
 import missions from '../../../missions';
 
@@ -18,10 +19,14 @@ export default {
     } else if (missionsCompletedPercentage === 100) {
       summary = 'You are amazing! In fact, I think the CEO role just opened up again. Would you like it?';
     }
+    const hasCraigsSurfboard = _.includes(_.get(state, 'present.user.inventory', []), constants.ITEM.CRAIGS_SURFBOARD);
     dispatch(
       gameActions.pushMessage(`Okay! Well, let’s see how you went today:<br />
       You completed ${missionsCompleted} of the total ${missionsAvailable} tasks that were available.
-      ${summary}<br /><br /><span class="command">Game over!</span>`)
+      ${summary} ${
+        hasCraigsSurfboard ? 'Also, that’s Craig’s surfboard so you might want to give that back at some point.' : ''
+      }<br /><br />
+      <span class="command">Game over!</span>`)
     );
     dispatch(gameActions.toggleInteractiveMode());
     dispatch(gameActions.gameOver());
