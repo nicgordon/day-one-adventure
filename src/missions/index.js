@@ -1,3 +1,4 @@
 import fixCode from './fix-code';
+import silenceCoffeeMachine from './silence-coffee-machine';
 
-export default [fixCode];
+export default [fixCode, silenceCoffeeMachine];
