@@ -7,6 +7,7 @@ const verbs = {
   CONTACT: 'call|contact|ring|telephone',
   DESCEND: 'descend|go down|go upstairs',
   DESCRIBE: 'describe',
+  DISCARD: 'discard|drop|place|put|remove|throw|throw away',
   ENTER: 'enter|go in',
   GET: 'acquire|get|grab|take',
   KNOCK: 'knock',

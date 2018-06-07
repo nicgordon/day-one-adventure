@@ -27,6 +27,20 @@ const scenesReducer = (state = initialState, action) => {
       };
     },
 
+    [constants.ACTION.USER_GIVE_ITEM]: () => {
+      if (action.recipientType === constants.TYPE.SCENE) {
+        const sceneState = {
+          ...state[action.recipientId],
+          inventory: _.concat(state[action.recipientId].inventory, [action.itemId]),
+        };
+
+        return {
+          ...state,
+          [action.recipientId]: sceneState,
+        };
+      }
+    },
+
     [constants.ACTION.USER_TAKE_ITEM]: () => {
       if (action.donorType === constants.TYPE.SCENE && _.includes(state[action.donorId].inventory, action.itemId)) {
         const sceneState = {

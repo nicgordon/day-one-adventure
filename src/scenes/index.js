@@ -6,6 +6,7 @@ import foyer from './foyer';
 import kitchen from './kitchen';
 import outsideOffice from './outside-office';
 import postScene from './post-scene';
+import toilet from './toilet';
 
 export default {
   postScene,
@@ -15,4 +16,5 @@ export default {
   [constants.SCENE.FOYER]: foyer,
   [constants.SCENE.KITCHEN]: kitchen,
   [constants.SCENE.OUTSIDE_OFFICE]: outsideOffice,
+  [constants.SCENE.TOILET]: toilet,
 };
