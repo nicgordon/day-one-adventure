@@ -4,6 +4,7 @@ const interactiveScenes = {
   HELP_DEVELOPMENT: 'help-development',
   KEYPAD: 'keypad',
   PERSONALITY_TEST: 'personality-test',
+  RECOVER_PASSWORD: 'recover-password',
   SALES_CALL: 'sales-call',
 };
 
