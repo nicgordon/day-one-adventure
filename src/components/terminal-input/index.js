@@ -24,7 +24,13 @@ class TerminalInput extends PureComponent {
 
     const { actions, dispatch, state } = this.props;
 
-    const command = _.trim(_.toLower(this.input.current.value));
+    const command = _(this.input.current.value)
+      .chain()
+      .replace(/(<|>|&lt;|&gt;)/gi, '')
+      .trim()
+      .toLower()
+      .value();
+
     if (_.isEmpty(command)) {
       return;
     }
