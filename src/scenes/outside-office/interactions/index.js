@@ -1,3 +1,4 @@
+import contactFelicity from './contact-felicity';
 import knock from './knock';
 import moveEast from './move-east';
 import moveNorth from './move-north';
@@ -7,4 +8,4 @@ import ringDoorbell from './ring-doorbell';
 import useKeypad from './use-keypad';
 import wait from './wait';
 
-export default [knock, openRollerDoor, moveEast, moveWest, moveNorth, wait, useKeypad, ringDoorbell];
+export default [contactFelicity, knock, openRollerDoor, moveEast, moveWest, moveNorth, wait, useKeypad, ringDoorbell];
