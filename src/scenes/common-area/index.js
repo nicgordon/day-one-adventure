@@ -5,7 +5,9 @@ import interactions from './interactions';
 export default {
   id: constants.SCENE.COMMON_AREA,
   name: 'Common area',
-  defaultState: {},
+  defaultState: {
+    inventory: [],
+  },
   interactions,
   getDescription: state => {
     const isCoffeeMachineOff = _.get(state, `present.scenes[${constants.SCENE.KITCHEN}].coffeeMachineOff`, false);
