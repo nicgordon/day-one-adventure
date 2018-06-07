@@ -5,6 +5,7 @@ import darkSide from './dark-side';
 import easeys from './easeys';
 import foyer from './foyer';
 import kitchen from './kitchen';
+import lightSide from './light-side';
 import outsideOffice from './outside-office';
 import patio from './patio';
 import postScene from './post-scene';
@@ -18,6 +19,7 @@ export default {
   [constants.SCENE.EASEYS]: easeys,
   [constants.SCENE.FOYER]: foyer,
   [constants.SCENE.KITCHEN]: kitchen,
+  [constants.SCENE.LIGHT_SIDE]: lightSide,
   [constants.SCENE.OUTSIDE_OFFICE]: outsideOffice,
   [constants.SCENE.PATIO]: patio,
   [constants.SCENE.TOILET]: toilet,
