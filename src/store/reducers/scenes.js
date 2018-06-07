@@ -39,6 +39,8 @@ const scenesReducer = (state = initialState, action) => {
           [action.recipientId]: sceneState,
         };
       }
+
+      return state;
     },
 
     [constants.ACTION.USER_TAKE_ITEM]: () => {
@@ -53,6 +55,8 @@ const scenesReducer = (state = initialState, action) => {
           [action.donorId]: sceneState,
         };
       }
+
+      return state;
     },
   };
 

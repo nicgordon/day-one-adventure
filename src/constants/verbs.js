@@ -10,6 +10,7 @@ const verbs = {
   DISCARD: 'discard|drop|place|put|remove|throw|throw away',
   ENTER: 'enter|go in',
   GET: 'acquire|get|grab|take',
+  GIVE: 'donate|give|offer|pass',
   KNOCK: 'knock',
   MEOW: 'meow',
   MOVE: 'go|move|run|walk',

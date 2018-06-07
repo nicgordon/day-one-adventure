@@ -2,7 +2,7 @@ import constants from '../../../constants';
 import gameActions from '../../../store/actions/game';
 
 export default {
-  pattern: new RegExp(`^(${constants.VERB.TALK}) (lauren|lauz|loz|lozza)$`),
+  pattern: new RegExp(`^(${constants.VERB.TALK}) (lauren|lauz|lozza|loz)$`),
   action: (state, dispatch) => {
     dispatch(
       gameActions.pushMessage(
