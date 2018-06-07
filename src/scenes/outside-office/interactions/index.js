@@ -2,8 +2,9 @@ import contactFelicity from './contact-felicity';
 import knock from './knock';
 import moveEast from './move-east';
 import moveNorth from './move-north';
-import moveWest from './move-west';
 import moveSouth from './move-south';
+import moveWest from './move-west';
+import openDoor from './open-door';
 import openRollerDoor from './open-roller-door';
 import ringDoorbell from './ring-doorbell';
 import useKeypad from './use-keypad';
@@ -20,4 +21,5 @@ export default [
   wait,
   useKeypad,
   ringDoorbell,
+  openDoor,
 ];
