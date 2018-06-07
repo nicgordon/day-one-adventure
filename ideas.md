@@ -1,14 +1,13 @@
 todo:
- - FIX GIVE LUNCH TO WILL REGEX
- - moving anywhere you have already been
- - luka potato sequence
- - eject and obfuscate code
- - hide undo unless game is over
+ - add all missions
  - add max length to field
+ - luka potato sequence
+ - hide undo unless game is over
+ - moving anywhere you have already been
+ - eject and obfuscate code
  - arrow keys to cycle previous commands
  - add analytics
 
-  DARK_SIDE: 'dark-side',
   ??? GARAGE: 'garage',
   LIGHT_SIDE: 'light-side',
 
@@ -20,16 +19,15 @@ todo:
 ✅ go upstairs (talk to felicity when you're done for the day) (meeting happening) (coffee machine deafening)
 meet people / hear problems (10 in total)
  ✅ - toilets (someone needs TP)
- - puzzle (someone needs a particular piece)
+ ✅ - puzzle (someone needs a particular piece)
  ✅ - coffee machine (silence it for the meeting)
- - forgotten password (with clues on post-its to solve it)
- - need lunch (steal someone else's from the fridge)
+ ✅ - forgotten password (with clues on post-its to solve it)
+ ✅ - need lunch (steal someone else's from the fridge)
  - code (fix some syntax error problems)
- - design (choose the right design)
+ ✅ - design (choose the right design)
  - project management (get people to do their timesheets)
  - sales (answer phone and answer questions to secure a sale)
  - frank (plant) needs water and some sun
- - BONUS note in book quest
 day over
 
 
