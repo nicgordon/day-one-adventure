@@ -11,7 +11,7 @@ export default {
       gameActions.pushMessage(
         `After a few moments a young woman appears on the other side of the glass door.
         Opening it, she smiles at you and says:<br />
-        "Hello, welcome to Inlight. I'm Christina. Come in!"`
+        <em>"Hello, welcome to Inlight. I'm Christina. Come in!"</em>`
       )
     );
     dispatch(
