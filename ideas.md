@@ -1,28 +1,27 @@
 todo:
+ - FIX GIVE LUNCH TO WILL REGEX
  - moving anywhere you have already been
- - people?
- - stop script injection (strip out <> chars)
+ - luka potato sequence
  - eject and obfuscate code
+ - hide undo unless game is over
+ - add max length to field
+ - arrow keys to cycle previous commands
+ - add analytics
 
- - outside
-  * knock
+  DARK_SIDE: 'dark-side',
+  ??? GARAGE: 'garage',
+  LIGHT_SIDE: 'light-side',
 
- - foyer
-  * go upstairs
-  * read book
-  * talk to plant
-
-
-start outside the office, roller door is closed
-get a burger to wait / or call @felicity (voice lulls you to sleep)
-come back to the office
-meet someone at the door
-go inside (can read books) (take book, handwritten note inside, with a puzzle) (can talk to plant)
-go upstairs (talk to felicity when you're done for the day) (meeting happening) (coffee machine deafening)
+✅ start outside the office, roller door is closed
+✅ get a burger to wait / or call @felicity (voice lulls you to sleep)
+✅ come back to the office
+✅ meet someone at the door
+✅ go inside (can read books) (take book, handwritten note inside, with a puzzle) (can talk to plant)
+✅ go upstairs (talk to felicity when you're done for the day) (meeting happening) (coffee machine deafening)
 meet people / hear problems (10 in total)
- - toilets (someone needs TP)
+ ✅ - toilets (someone needs TP)
  - puzzle (someone needs a particular piece)
- - coffee machine (silence it for the meeting)
+ ✅ - coffee machine (silence it for the meeting)
  - forgotten password (with clues on post-its to solve it)
  - need lunch (steal someone else's from the fridge)
  - code (fix some syntax error problems)
