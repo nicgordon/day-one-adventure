@@ -2,7 +2,8 @@ import _ from 'lodash';
 
 const verbs = {
   ASCEND: 'ascend|climb|go up|go upstairs',
-  CHECK: 'check|inspect|look at|read',
+  CHECK: 'check|describe|inspect|look at|read',
+  CLOSE: 'close|shut',
   CONTACT: 'call|contact|ring|telephone',
   DESCEND: 'descend|go down|go upstairs',
   DESCRIBE: 'describe',
@@ -15,6 +16,7 @@ const verbs = {
   ORDER: 'ask for|buy|get|order',
   RING: 'ring',
   TALK: 'chat( to|with)?|talk( to|with)?|speak( to|with)?',
+  TURN_OFF: 'turn off|shut down|unplug|power down|switch off|kill',
   USE: 'interact with|use',
   WAIT: 'wait',
   YELL: 'call out|shout|yell',
