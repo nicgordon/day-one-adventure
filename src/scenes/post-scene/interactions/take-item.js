@@ -4,7 +4,7 @@ import gameActions from '../../../store/actions/game';
 import items from '../../../items';
 import userActions from '../../../store/actions/user';
 
-const pattern = new RegExp(`^(${constants.WORD_GROUP.VERB.GET}) (.+)$`);
+const pattern = new RegExp(`^(${constants.VERB.GET}) (.+)$`);
 
 export default {
   pattern,

@@ -4,7 +4,7 @@ import gameActions from '../../../store/actions/game';
 import sceneActions from '../../../store/actions/scene';
 
 export default {
-  pattern: new RegExp(`^(${constants.WORD_GROUP.VERB.RING}) (the )?door ?bell$`),
+  pattern: new RegExp(`^(${constants.VERB.RING}) (the )?door ?bell$`),
   predicate: state => _.get(state, `present.scenes[${constants.SCENE.OUTSIDE_OFFICE}].rollerDoorOpen`, false),
   action: (state, dispatch) => {
     dispatch(

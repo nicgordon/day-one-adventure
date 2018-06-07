@@ -3,7 +3,7 @@ import gameActions from '../../../store/actions/game';
 import sceneActions from '../../../store/actions/scene';
 
 export default {
-  pattern: new RegExp(`^(${constants.WORD_GROUP.VERB.ORDER}).*burger`),
+  pattern: new RegExp(`^(${constants.VERB.ORDER}).*burger`),
   action: (state, dispatch) => {
     dispatch(
       gameActions.pushMessage(

@@ -1,8 +1,8 @@
 import actions from './actions';
+import interactiveScenes from './interactive-scenes';
 import items from './items';
 import scenes from './scenes';
-import interactiveScenes from './interactive-scenes';
-import wordGroups from './word-groups';
+import verbs from './verbs';
 
 const constants = {
   ACTION: actions,
@@ -13,7 +13,7 @@ const constants = {
     PERSON: 'person',
     SCENE: 'scene',
   },
-  WORD_GROUP: wordGroups,
+  VERB: verbs,
 };
 
 export default constants;

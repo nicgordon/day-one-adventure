@@ -4,7 +4,7 @@ import gameActions from '../../../store/actions/game';
 import sceneActions from '../../../store/actions/scene';
 
 export default {
-  pattern: new RegExp(`^(${constants.WORD_GROUP.VERB.YELL})`),
+  pattern: new RegExp(`^(${constants.VERB.YELL})`),
   action: (state, dispatch) => {
     const craigAwake = _.get(state, `present.scenes[${constants.SCENE.CRAIGS_HOUSE}].craigAwake`, false);
     dispatch(

@@ -2,7 +2,7 @@ import constants from '../../../constants';
 import gameActions from '../../../store/actions/game';
 
 export default {
-  pattern: new RegExp(`^(${constants.WORD_GROUP.VERB.TALK}) (felicity|flic)$`),
+  pattern: new RegExp(`^(${constants.VERB.TALK}) (felicity|flic)$`),
   action: (state, dispatch) => {
     dispatch(
       gameActions.pushMessage(`"Hey there!" she says, her face beaming with a smile,

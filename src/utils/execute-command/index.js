@@ -11,7 +11,7 @@ const executeCommand = (command, state, dispatch) => {
     // Check if it is at least a known command
     dispatch(
       gameActions.pushMessage(
-        new RegExp(`^(${constants.WORD_GROUP.VERB.ALL})`).test(command)
+        new RegExp(`^(${constants.VERB.ALL})`).test(command)
           ? 'You can’t do this here.'
           : 'This command is utter nonsense.'
       )
