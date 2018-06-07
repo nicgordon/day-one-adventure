@@ -8,6 +8,7 @@ const verbs = {
   DESCRIBE: 'describe',
   ENTER: 'enter|go in',
   GET: 'acquire|get|grab|take',
+  KNOCK: 'knock',
   MEOW: 'meow',
   MOVE: 'go|move|run|walk',
   OPEN: 'open',

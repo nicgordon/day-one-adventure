@@ -1,3 +1,4 @@
+import knock from './knock';
 import moveEast from './move-east';
 import moveNorth from './move-north';
 import moveWest from './move-west';
@@ -6,7 +7,4 @@ import ringDoorbell from './ring-doorbell';
 import useKeypad from './use-keypad';
 import wait from './wait';
 
-// @TODO:
-// knock (both roller door and glass door versions)
-
-export default [openRollerDoor, moveEast, moveWest, moveNorth, wait, useKeypad, ringDoorbell];
+export default [knock, openRollerDoor, moveEast, moveWest, moveNorth, wait, useKeypad, ringDoorbell];
