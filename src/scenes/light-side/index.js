@@ -8,6 +8,7 @@ export default {
   defaultState: {
     codeFixed: false,
     designFixed: false,
+    frankWatered: false,
     madeSale: false,
     passwordRecovered: false,
     inventory: [constants.ITEM.FRANK_THE_PLANT],
