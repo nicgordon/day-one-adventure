@@ -21,7 +21,7 @@ const Header = ({ actions, canUndo, locationName }) => {
 };
 
 const mapStateToProps = state => ({
-  canUndo: state.past.length > 0,
+  canUndo: state.past.length > 0 && state.present.game.gameOver,
   locationName: scenes[state.present.user.location].name,
 });
 
