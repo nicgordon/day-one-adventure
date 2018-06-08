@@ -5,6 +5,7 @@
   margin-bottom: 15px;
 }
 
+.helpButton,
 .undoButton {
   cursor: pointer;
 }
