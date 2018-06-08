@@ -47,6 +47,7 @@ class TerminalInput extends PureComponent {
         <span>&gt;&nbsp;</span>
         <input
           className="input"
+          maxLength="60"
           onBlur={() => {
             this.input.current.focus();
           }}
