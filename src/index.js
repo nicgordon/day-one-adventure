@@ -9,6 +9,8 @@ import store from './store';
 import './styles/reset.css';
 import './styles/base.css';
 
+console.info('Checking the source kinda ruins the fun don’t you think?');
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
