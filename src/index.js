@@ -17,4 +17,10 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+
+document.addEventListener('keypress', () => {
+  const input = document.getElementById('input');
+  input.focus();
+});
+
 registerServiceWorker();

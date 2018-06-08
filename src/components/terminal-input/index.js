@@ -45,7 +45,7 @@ class TerminalInput extends PureComponent {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
         <span>&gt;&nbsp;</span>
-        <input className="input" maxLength="60" ref={this.input} type="text" />
+        <input id="input" className="input" maxLength="60" ref={this.input} type="text" />
       </form>
     );
   }
