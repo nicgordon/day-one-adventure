@@ -28,7 +28,7 @@ export default {
 
     return `A long bright room extends away from you. Light pours in from the large windows on the south side of the room.
     There are many white desks covered with various technological adornments and a plant.
-    There’s a general buzz of activity and the scene is puncuated by a spanish-sounding song that seems to be constantly restarting.<br /><br />
+    There’s a general buzz of activity and the scene is punctuated by a spanish-sounding song that seems to be constantly restarting.<br /><br />
     There’s a <em>lot</em> going on in here:<br />
      - Luka is clearly pretending to be working<br />
      - ${
