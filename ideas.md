@@ -3,8 +3,7 @@ nice todo:
  - moving anywhere you have already been
  - arrow keys to cycle previous commands
 
-definitely todo:
- - eject and obfuscate code
+definitely todo: 
  - add analytics
 
 v2 todo:
@@ -39,3 +38,6 @@ can get instantly fired and game ends for doing stupid shit (like meowing)
 ability to either start over or undo the last action
 2 modes: usual command mode, and interacting with something mode
 Add https://github.com/javascript-obfuscator/javascript-obfuscator#options
+
+not doing:
+- X eject and obfuscate code (tried this and my strings were still visible. not worth ejecting for it)
