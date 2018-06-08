@@ -17,6 +17,8 @@ export default {
             Which one do you like?"</em>`
       )
     );
-    dispatch(gameActions.toggleInteractiveMode(constants.INTERACTIVE_SCENE.HELP_DESIGN));
+    if (!isDesignFixed) {
+      dispatch(gameActions.toggleInteractiveMode(constants.INTERACTIVE_SCENE.HELP_DESIGN));
+    }
   },
 };

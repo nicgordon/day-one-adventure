@@ -15,6 +15,8 @@ export default {
             <em>"Could you have a crack at fixing it for me please?"</em>`
       )
     );
-    dispatch(gameActions.toggleInteractiveMode(constants.INTERACTIVE_SCENE.HELP_DEVELOPMENT));
+    if (!isCodeFixed) {
+      dispatch(gameActions.toggleInteractiveMode(constants.INTERACTIVE_SCENE.HELP_DEVELOPMENT));
+    }
   },
 };

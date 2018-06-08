@@ -14,6 +14,8 @@ export default {
           I’ve tried every heuristic I can think of to try and remember it. Here, you try..."</em>`
       )
     );
-    dispatch(gameActions.toggleInteractiveMode(constants.INTERACTIVE_SCENE.RECOVER_PASSWORD));
+    if (!isPasswordRecovered) {
+      dispatch(gameActions.toggleInteractiveMode(constants.INTERACTIVE_SCENE.RECOVER_PASSWORD));
+    }
   },
 };
