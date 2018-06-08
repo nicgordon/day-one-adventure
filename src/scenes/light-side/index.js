@@ -18,17 +18,19 @@ export default {
     const sceneState = _.get(state, `present.scenes[${constants.SCENE.LIGHT_SIDE}]`, {});
     const isCodeFixed = _.get(sceneState, 'codeFixed', false);
     const isDesignFixed = _.get(sceneState, 'designFixed', false);
-    const isSaleMade = _.get(sceneState, 'madeSale', false);
     const isPasswordRecovered = _.get(sceneState, 'passwordRecovered', false);
+
+    // @TODO: Add this back in at some point
+    // const isSaleMade = _.get(sceneState, 'madeSale', false);
+    // - Angelo is answering so many calls that he is currently holding one phone to each ear${
+    //   isSaleMade ? ' but somehow he is also giving you the thumbs up' : ''
+    // }<br />
 
     return `A long bright room extends away from you. Light pours in from the large windows on the south side of the room.
     There are many white desks covered with various technological adornments and a plant.
     There’s a general buzz of activity and the scene is puncuated by a spanish-sounding song that seems to be constantly restarting.<br /><br />
     There’s a <em>lot</em> going on in here:<br />
      - Luka is clearly pretending to be working<br />
-     - Angelo is answering so many calls that he is currently holding one phone to each ear${
-       isSaleMade ? ' but somehow he is also giving you the thumbs up' : ''
-     }<br />
      - ${
        isCodeFixed
          ? 'Sean is churning through code so quickly his fingers are blurred'
