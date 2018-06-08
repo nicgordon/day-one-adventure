@@ -1,6 +1,7 @@
 import constants from '../../../constants';
 import gameActions from '../../../store/actions/game';
 
+// @TODO: Predicate that frank is still in the room's inventory
 export default {
   pattern: new RegExp(`^(${constants.VERB.TALK}) (frank|(the )?plant)$`),
   action: (state, dispatch) => {
