@@ -3,7 +3,7 @@ import _ from 'lodash';
 import constants from '../constants';
 
 export default {
-  name: 'Frank the plant cared for',
+  name: 'Care for Frank the plant',
   predicate: state => {
     const outdoorLocations = [
       constants.SCENE.CARPARK,
