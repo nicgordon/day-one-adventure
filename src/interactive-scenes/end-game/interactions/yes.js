@@ -12,13 +12,14 @@ export default {
     const missionsCompletedPercentage = (missionsCompleted / missionsAvailable) * 100;
     let summary =
       'Pretty poor effort really. I’m not sure if it’s worth having you back in. Here’s a box. Pack up your stuff.';
-    if (missionsCompletedPercentage > 25) {
-      summary = 'You managed to get around to doing a few things, but I think you can do better.';
+    if (missionsCompletedPercentage === 100) {
+      summary = 'You are amazing! In fact, I think the CEO role just opened up again. Would you like it?';
     } else if (missionsCompletedPercentage > 50) {
       summary = 'You quite an effective day. Welcome to the Inlight family!';
-    } else if (missionsCompletedPercentage === 100) {
-      summary = 'You are amazing! In fact, I think the CEO role just opened up again. Would you like it?';
+    } else if (missionsCompletedPercentage > 25) {
+      summary = 'You managed to get around to doing a few things, but I think you can do better.';
     }
+
     const hasCraigsSurfboard = _.includes(_.get(state, 'present.user.inventory', []), constants.ITEM.CRAIGS_SURFBOARD);
     dispatch(
       gameActions.pushMessage(`Okay! Well, let’s see how you went today:<br />
