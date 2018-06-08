@@ -1,15 +1,16 @@
-todo:
- - add all missions
- - add max length to field
- - luka potato sequence
- - hide undo unless game is over
+nice todo:
+ - add help button
  - moving anywhere you have already been
- - eject and obfuscate code
  - arrow keys to cycle previous commands
+
+definitely todo:
+ - eject and obfuscate code
  - add analytics
 
-  ??? GARAGE: 'garage',
-  LIGHT_SIDE: 'light-side',
+v2 todo:
+ - make this work in a slack channel
+
+------
 
 ✅ start outside the office, roller door is closed
 ✅ get a burger to wait / or call @felicity (voice lulls you to sleep)
@@ -23,11 +24,11 @@ meet people / hear problems (10 in total)
  ✅ - coffee machine (silence it for the meeting)
  ✅ - forgotten password (with clues on post-its to solve it)
  ✅ - need lunch (steal someone else's from the fridge)
- - code (fix some syntax error problems)
+ ✅ - code (fix some syntax error problems)
  ✅ - design (choose the right design)
- - project management (get people to do their timesheets)
- - sales (answer phone and answer questions to secure a sale)
- - frank (plant) needs water and some sun
+ 🛑 - project management (get people to do their timesheets)
+ 🛑 - sales (answer phone and answer questions to secure a sale)
+ ✅ - frank (plant) needs water and some sun
 day over
 
 
@@ -38,5 +39,3 @@ can get instantly fired and game ends for doing stupid shit (like meowing)
 ability to either start over or undo the last action
 2 modes: usual command mode, and interacting with something mode
 Add https://github.com/javascript-obfuscator/javascript-obfuscator#options
-
-slack channel! v2
