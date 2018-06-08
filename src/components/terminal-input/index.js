@@ -26,7 +26,7 @@ class TerminalInput extends PureComponent {
 
     const command = _(this.input.current.value)
       .chain()
-      .replace(/(<|>|&lt;|&gt;)/gi, '')
+      .replace(/(>|&lt;|&gt;)/gi, '')
       .trim()
       .toLower()
       .value();
