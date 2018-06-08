@@ -8,6 +8,7 @@ export default {
         &gt; <em>describe scene</em> - To describe your current surroundings<br />
         &gt; <em>move (in a compass direction)</em> - To walk somewhere else<br />
         &gt; <em>take (thing)</em> - To put said thing into your inventory<br />
+        &gt; <em>check (thing)</em> - To get a more detailed description of said thing<br />
         &gt; <em>inventory</em> - To check out your loot`)
     );
   },

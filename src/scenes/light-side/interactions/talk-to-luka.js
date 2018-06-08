@@ -10,6 +10,6 @@ export default {
         It’s called ‘What kind of vigitable are you bro?’ Guiss what I got?"</em>`
       )
     );
-    dispatch(gameActions.toggleInteractiveMode(constants.INTERACTIVE_SCENE.HELP_DESIGN));
+    dispatch(gameActions.toggleInteractiveMode(constants.INTERACTIVE_SCENE.PERSONALITY_TEST));
   },
 };

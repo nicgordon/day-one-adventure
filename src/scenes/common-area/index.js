@@ -19,7 +19,7 @@ export default {
         ? ''
         : 'He’s attempting to speak to the group but his voice is being drowned out by a racket eminating from the kitchen.'
     }
-    A girl named Lauren is hunched over the table and is putting together an enormous puzzle.
+    A developer named Lauren is hunched over the table and is putting together an enormous puzzle.
     Felicity is waving at you from the end of the table.`;
   },
 };

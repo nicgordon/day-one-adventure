@@ -12,6 +12,6 @@ export default {
     return `The light in here is very dim and the imperial march is playing softly on repeat.
       You feel your way around in the darkness and stumble upon a vitamin D deficient character
       named Will who has built himself a fort out of spare toilet paper rolls.
-      He looks a bit deranged and he beckons you closer. `;
+      He looks a bit deranged and he beckons you closer.`;
   },
 };

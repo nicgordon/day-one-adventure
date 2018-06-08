@@ -14,7 +14,7 @@ export default {
         isWillNourished
           ? '<em>nom nom nom...</em>'
           : `<em>"I’ve got the deal of a lifetime for you sonny.
-        Bring me some food and I’ll give you back the puzzle piece I stole from that girl out there, heh heh."</em>`
+        Bring me some food and I’ll give you back the puzzle piece I stole from that chick out there, heh heh."</em>`
       )
     );
   },
