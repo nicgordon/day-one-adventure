@@ -1,17 +1,19 @@
-import _ from 'lodash';
+import concat from 'lodash/concat';
+import find from 'lodash/find';
+import get from 'lodash/get';
 
 import interactiveScenes from '../../interactive-scenes';
 import scenes from '../../scenes';
 
 const validateCommand = (command, state) => {
-  const interactiveSceneId = _.get(state, 'present.game.interactiveScene');
-  const sceneId = _.get(state, 'present.user.location');
+  const interactiveSceneId = get(state, 'present.game.interactiveScene');
+  const sceneId = get(state, 'present.user.location');
   // Are we in an interactive mode?
   const availableInteractions = interactiveSceneId
-    ? _.concat(interactiveScenes.preScene.interactions, interactiveScenes[interactiveSceneId].interactions)
-    : _.concat(scenes[sceneId].interactions, scenes.postScene.interactions);
+    ? concat(interactiveScenes.preScene.interactions, interactiveScenes[interactiveSceneId].interactions)
+    : concat(scenes[sceneId].interactions, scenes.postScene.interactions);
 
-  const successfulInteraction = _.find(
+  const successfulInteraction = find(
     availableInteractions,
     interaction => (interaction.predicate ? interaction.predicate(state) : true) && interaction.pattern.test(command)
   );

@@ -1,5 +1,5 @@
-import _ from 'lodash';
 import constants from '../../constants';
+import get from 'lodash/get';
 import interactions from './interactions';
 
 export default {
@@ -15,13 +15,13 @@ export default {
   },
   interactions,
   getDescription: state => {
-    const sceneState = _.get(state, `present.scenes[${constants.SCENE.LIGHT_SIDE}]`, {});
-    const isCodeFixed = _.get(sceneState, 'codeFixed', false);
-    const isDesignFixed = _.get(sceneState, 'designFixed', false);
-    const isPasswordRecovered = _.get(sceneState, 'passwordRecovered', false);
+    const sceneState = get(state, `present.scenes[${constants.SCENE.LIGHT_SIDE}]`, {});
+    const isCodeFixed = get(sceneState, 'codeFixed', false);
+    const isDesignFixed = get(sceneState, 'designFixed', false);
+    const isPasswordRecovered = get(sceneState, 'passwordRecovered', false);
 
     // @TODO: Add this back in at some point
-    // const isSaleMade = _.get(sceneState, 'madeSale', false);
+    // const isSaleMade = get(sceneState, 'madeSale', false);
     // - Angelo is answering so many calls that he is currently holding one phone to each ear${
     //   isSaleMade ? ' but somehow he is also giving you the thumbs up' : ''
     // }<br />

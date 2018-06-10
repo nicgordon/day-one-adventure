@@ -1,5 +1,5 @@
-import _ from 'lodash';
 import constants from '../../constants';
+import get from 'lodash/get';
 import interactions from './interactions';
 
 export default {
@@ -11,7 +11,7 @@ export default {
   },
   interactions,
   getDescription: state => {
-    const isToiletPaperProvided = _.get(state, `present.scenes[${constants.SCENE.TOILET}].toiletPaperProvided`, false);
+    const isToiletPaperProvided = get(state, `present.scenes[${constants.SCENE.TOILET}].toiletPaperProvided`, false);
 
     return isToiletPaperProvided
       ? 'A couple of toilets and a sink. Nothing to see here. Stop checking yourself out in the mirror.'

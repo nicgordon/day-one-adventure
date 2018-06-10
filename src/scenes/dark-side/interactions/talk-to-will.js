@@ -1,12 +1,13 @@
-import _ from 'lodash';
 import constants from '../../../constants';
 import gameActions from '../../../store/actions/game';
+import get from 'lodash/get';
+import includes from 'lodash/includes';
 
 export default {
   pattern: new RegExp(`^(${constants.VERB.TALK}) (will)$`),
   action: (state, dispatch) => {
-    const isWillNourished = _.includes(
-      _.get(state, `present.people[${constants.PERSON.WILL}].inventory`, []),
+    const isWillNourished = includes(
+      get(state, `present.people[${constants.PERSON.WILL}].inventory`, []),
       constants.ITEM.LUNCH
     );
     dispatch(

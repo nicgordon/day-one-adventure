@@ -1,4 +1,6 @@
-import _ from 'lodash';
+import flatMap from 'lodash/flatMap';
+import get from 'lodash/get';
+import includes from 'lodash/includes';
 
 import constants from '../constants';
 
@@ -12,13 +14,13 @@ export default {
       constants.SCENE.OUTSIDE_OFFICE,
       constants.SCENE.PATIO,
     ];
-    const combinedOutdoorInventory = _.flatMap(outdoorLocations, locationId =>
-      _.get(state, `present.scenes[${locationId}].inventory`, [])
+    const combinedOutdoorInventory = flatMap(outdoorLocations, locationId =>
+      get(state, `present.scenes[${locationId}].inventory`, [])
     );
 
     return (
-      _.includes(combinedOutdoorInventory, constants.ITEM.FRANK_THE_PLANT) &&
-      _.get(state, `present.scenes[${constants.SCENE.LIGHT_SIDE}].frankWatered`, false)
+      includes(combinedOutdoorInventory, constants.ITEM.FRANK_THE_PLANT) &&
+      get(state, `present.scenes[${constants.SCENE.LIGHT_SIDE}].frankWatered`, false)
     );
   },
 };

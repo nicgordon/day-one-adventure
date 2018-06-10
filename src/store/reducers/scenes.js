@@ -1,6 +1,8 @@
-import _ from 'lodash';
+import concat from 'lodash/concat';
 import constants from '../../constants';
+import includes from 'lodash/includes';
 import scenes from '../../scenes';
+import without from 'lodash/without';
 
 const initialState = {
   [constants.SCENE.OUTSIDE_OFFICE]: scenes[constants.SCENE.OUTSIDE_OFFICE].defaultState,
@@ -31,7 +33,7 @@ const scenesReducer = (state = initialState, action) => {
       if (action.recipientType === constants.TYPE.SCENE) {
         const sceneState = {
           ...state[action.recipientId],
-          inventory: _.concat(state[action.recipientId].inventory, [action.itemId]),
+          inventory: concat(state[action.recipientId].inventory, [action.itemId]),
         };
 
         return {
@@ -44,10 +46,10 @@ const scenesReducer = (state = initialState, action) => {
     },
 
     [constants.ACTION.USER_TAKE_ITEM]: () => {
-      if (action.donorType === constants.TYPE.SCENE && _.includes(state[action.donorId].inventory, action.itemId)) {
+      if (action.donorType === constants.TYPE.SCENE && includes(state[action.donorId].inventory, action.itemId)) {
         const sceneState = {
           ...state[action.donorId],
-          inventory: _.without(state[action.donorId].inventory, action.itemId),
+          inventory: without(state[action.donorId].inventory, action.itemId),
         };
 
         return {

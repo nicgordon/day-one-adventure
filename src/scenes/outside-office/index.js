@@ -1,5 +1,6 @@
-import _ from 'lodash';
 import constants from '../../constants';
+import get from 'lodash/get';
+import has from 'lodash/has';
 import interactions from './interactions';
 
 export default {
@@ -12,9 +13,9 @@ export default {
   },
   interactions,
   getDescription: state => {
-    const firstMove = _.get(state, 'present.game.moves', 0) === 0;
-    const rollerDoorOpen = _.get(state, `present.scenes[${constants.SCENE.OUTSIDE_OFFICE}].rollerDoorOpen`, false);
-    const visitedEaseys = _.has(_.get(state, 'present.scenes'), constants.SCENE.EASEYS);
+    const firstMove = get(state, 'present.game.moves', 0) === 0;
+    const rollerDoorOpen = get(state, `present.scenes[${constants.SCENE.OUTSIDE_OFFICE}].rollerDoorOpen`, false);
+    const visitedEaseys = has(get(state, 'present.scenes'), constants.SCENE.EASEYS);
 
     return `${
       firstMove

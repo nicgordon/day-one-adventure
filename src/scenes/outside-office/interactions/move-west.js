@@ -1,13 +1,13 @@
-import _ from 'lodash';
 import constants from '../../../constants';
 import gameActions from '../../../store/actions/game';
+import get from 'lodash/get';
 import userActions from '../../../store/actions/user';
 
 export default {
   pattern: new RegExp(`^(${constants.VERB.MOVE}) (west|inside|in)$`),
   action: (state, dispatch) => {
-    const doorOpen = _.get(state, `present.scenes[${constants.SCENE.OUTSIDE_OFFICE}].doorOpen`, false);
-    const rollerDoorOpen = _.get(state, `present.scenes[${constants.SCENE.OUTSIDE_OFFICE}].rollerDoorOpen`, false);
+    const doorOpen = get(state, `present.scenes[${constants.SCENE.OUTSIDE_OFFICE}].doorOpen`, false);
+    const rollerDoorOpen = get(state, `present.scenes[${constants.SCENE.OUTSIDE_OFFICE}].rollerDoorOpen`, false);
 
     if (doorOpen) {
       dispatch(userActions.move(constants.SCENE.FOYER));

@@ -1,13 +1,14 @@
-import _ from 'lodash';
 import constants from '../../../constants';
 import gameActions from '../../../store/actions/game';
+import get from 'lodash/get';
+import includes from 'lodash/includes';
 import sceneActions from '../../../store/actions/scene';
 
 export default {
   pattern: new RegExp(`^(${constants.VERB.CHECK}) (a )?book$`),
   action: (state, dispatch) => {
-    const userHasTakenNote = !_.includes(
-      _.get(state, `present.scenes[${constants.SCENE.FOYER}].inventory`),
+    const userHasTakenNote = !includes(
+      get(state, `present.scenes[${constants.SCENE.FOYER}].inventory`),
       constants.ITEM.PASSWORD_NOTE
     );
     dispatch(

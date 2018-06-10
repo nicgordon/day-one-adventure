@@ -1,6 +1,7 @@
-import _ from 'lodash';
 import constants from '../../../constants';
 import gameActions from '../../../store/actions/game';
+import get from 'lodash/get';
+import includes from 'lodash/includes';
 import userActions from '../../../store/actions/user';
 
 export default {
@@ -9,7 +10,7 @@ export default {
       constants.VERB.GIVE
     }) ((lauren|lauz|lozza|loz) )?(the )?(puzzle|jigsaw) piece( (to )?(lauren|lauz|lozza|loz))?$`
   ),
-  predicate: state => _.includes(_.get(state, `present.user.inventory`, []), constants.ITEM.PUZZLE_PIECE),
+  predicate: state => includes(get(state, `present.user.inventory`, []), constants.ITEM.PUZZLE_PIECE),
   action: (state, dispatch) => {
     dispatch(
       gameActions.pushMessage(

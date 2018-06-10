@@ -1,5 +1,5 @@
-import _ from 'lodash';
 import constants from '../../constants';
+import get from 'lodash/get';
 import interactions from './interactions';
 
 export default {
@@ -10,7 +10,7 @@ export default {
   },
   interactions,
   getDescription: state => {
-    const isCoffeeMachineOff = _.get(state, `present.scenes[${constants.SCENE.KITCHEN}].coffeeMachineOff`, false);
+    const isCoffeeMachineOff = get(state, `present.scenes[${constants.SCENE.KITCHEN}].coffeeMachineOff`, false);
 
     return `There is a long wooden table with several people sat around it on bench seats.
     A burly, bearded man named Chris is fiddling with a projector.

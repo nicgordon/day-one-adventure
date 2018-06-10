@@ -1,5 +1,6 @@
-import _ from 'lodash';
+import concat from 'lodash/concat';
 import constants from '../../constants';
+import without from 'lodash/without';
 
 const initialState = {
   inventory: [],
@@ -15,12 +16,12 @@ const userReducer = (state = initialState, action) => {
 
     [constants.ACTION.USER_GIVE_ITEM]: () => ({
       ...state,
-      inventory: _.without(state.inventory, action.itemId),
+      inventory: without(state.inventory, action.itemId),
     }),
 
     [constants.ACTION.USER_TAKE_ITEM]: () => ({
       ...state,
-      inventory: _.concat(state.inventory, [action.itemId]),
+      inventory: concat(state.inventory, [action.itemId]),
     }),
   };
 

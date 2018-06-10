@@ -1,12 +1,13 @@
-import _ from 'lodash';
 import constants from '../../../constants';
 import gameActions from '../../../store/actions/game';
+import get from 'lodash/get';
+import includes from 'lodash/includes';
 import sceneActions from '../../../store/actions/scene';
 import userActions from '../../../store/actions/user';
 
 export default {
   pattern: new RegExp(`^((give|pour|put) )?water ((on|to) )?(the )?(plant|frank)`),
-  predicate: state => _.includes(_.get(state, `present.user.inventory`, []), constants.ITEM.WATER),
+  predicate: state => includes(get(state, `present.user.inventory`, []), constants.ITEM.WATER),
   action: (state, dispatch) => {
     dispatch(
       gameActions.pushMessage(

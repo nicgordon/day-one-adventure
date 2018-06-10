@@ -1,20 +1,21 @@
-import _ from 'lodash';
 import gameActions from '../../../store/actions/game';
+import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
 import items from '../../../items';
+import join from 'lodash/join';
+import map from 'lodash/map';
 
 export default {
   pattern: new RegExp(`^((describe|look at|check) )?inventory$`),
   action: (state, dispatch) => {
-    const itemsInInventory = _(state)
-      .chain()
-      .get('present.user.inventory')
-      .map(itemId => `<em>${items[itemId].name}</em>`)
-      .join('<br />')
-      .value();
+    const itemsInInventory = join(
+      map(get(state, 'present.user.inventory'), itemId => `<em>${items[itemId].name}</em>`),
+      '<br />'
+    );
 
     dispatch(
       gameActions.pushMessage(
-        _.isEmpty(itemsInInventory)
+        isEmpty(itemsInInventory)
           ? 'You don’t have any items'
           : `You have the following items:<br />${itemsInInventory}`
       )

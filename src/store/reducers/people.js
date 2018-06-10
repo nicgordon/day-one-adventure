@@ -1,11 +1,12 @@
-import _ from 'lodash';
+import concat from 'lodash/concat';
 import constants from '../../constants';
+import includes from 'lodash/includes';
+import invert from 'lodash/invert';
+import mapValues from 'lodash/mapValues';
 import people from '../../people';
+import without from 'lodash/without';
 
-const initialState = _(constants.PERSON)
-  .invert()
-  .mapValues((key, personId) => people[personId].defaultState)
-  .value();
+const initialState = mapValues(invert(constants.PERSON), (key, personId) => people[personId].defaultState);
 
 const peopleReducer = (state = initialState, action) => {
   const reducers = {
@@ -13,7 +14,7 @@ const peopleReducer = (state = initialState, action) => {
       if (action.recipientType === constants.TYPE.PERSON) {
         const personState = {
           ...state[action.recipientId],
-          inventory: _.concat(state[action.recipientId].inventory, [action.itemId]),
+          inventory: concat(state[action.recipientId].inventory, [action.itemId]),
         };
 
         return {
@@ -26,10 +27,10 @@ const peopleReducer = (state = initialState, action) => {
     },
 
     [constants.ACTION.USER_TAKE_ITEM]: () => {
-      if (action.donorType === constants.TYPE.PERSON && _.includes(state[action.donorId].inventory, action.itemId)) {
+      if (action.donorType === constants.TYPE.PERSON && includes(state[action.donorId].inventory, action.itemId)) {
         const personState = {
           ...state[action.donorId],
-          inventory: _.without(state[action.donorId].inventory, action.itemId),
+          inventory: without(state[action.donorId].inventory, action.itemId),
         };
 
         return {

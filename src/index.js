@@ -1,5 +1,9 @@
-import _ from 'lodash';
 import { ActionCreators as undoActions } from 'redux-undo';
+import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
+import replace from 'lodash/replace';
+import toLower from 'lodash/toLower';
+import trim from 'lodash/trim';
 
 import executeCommand from './utils/execute-command';
 import gameActions from './store/actions/game';
@@ -27,14 +31,9 @@ const undoButton = document.getElementsByClassName('undoButton')[0];
 form.addEventListener('submit', event => {
   event.preventDefault();
 
-  const command = _(input.value)
-    .chain()
-    .replace(/(>|&lt;|&gt;)/gi, '')
-    .trim()
-    .toLower()
-    .value();
+  const command = toLower(trim(replace(input.value, /(>|&lt;|&gt;)/gi, '')));
 
-  if (_.isEmpty(command)) {
+  if (isEmpty(command)) {
     return;
   }
   store.dispatch(gameActions.submitCommand(command));
@@ -61,11 +60,11 @@ let currentState;
 const subscribeListener = () => {
   const previousState = currentState;
   currentState = store.getState();
-  if (_.get(currentState, `present.game.log`) !== _.get(previousState, `present.game.log`)) {
-    log.innerHTML = _.get(currentState, `present.game.log`);
+  if (get(currentState, `present.game.log`) !== get(previousState, `present.game.log`)) {
+    log.innerHTML = get(currentState, `present.game.log`);
     terminalContainer.scrollTop = terminalContainer.scrollHeight;
   }
-  locationName.innerText = scenes[_.get(currentState, `present.user.location`)].name;
+  locationName.innerText = scenes[get(currentState, `present.user.location`)].name;
 };
 store.subscribe(subscribeListener);
 

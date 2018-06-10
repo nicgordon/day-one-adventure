@@ -1,7 +1,10 @@
-import _ from 'lodash';
+import compact from 'lodash/compact';
 import constants from '../../../constants';
+import find from 'lodash/find';
 import gameActions from '../../../store/actions/game';
+import get from 'lodash/get';
 import items from '../../../items';
+import map from 'lodash/map';
 
 const pattern = new RegExp(`^(${constants.VERB.CHECK}) (.+)$`);
 
@@ -9,8 +12,8 @@ export default {
   pattern,
   action: (state, dispatch, command) => {
     const itemSearchTerm = command.match(pattern)[2];
-    const availableItems = _.compact(_.map(_.get(state, 'present.user.inventory', []), itemId => items[itemId]));
-    const item = _.find(availableItems, availableItem => availableItem.pattern.test(itemSearchTerm));
+    const availableItems = compact(map(get(state, 'present.user.inventory', []), itemId => items[itemId]));
+    const item = find(availableItems, availableItem => availableItem.pattern.test(itemSearchTerm));
 
     if (item) {
       dispatch(gameActions.pushMessage(item.getDescription(state)));

@@ -1,4 +1,5 @@
-import _ from 'lodash';
+import join from 'lodash/join';
+import values from 'lodash/values';
 
 const verbs = {
   ASCEND: 'ascend|climb|go up|go upstairs',
@@ -24,6 +25,6 @@ const verbs = {
   YELL: 'call out|shout|yell',
 };
 
-verbs.ALL = _.join(_.values(verbs), '|');
+verbs.ALL = join(values(verbs), '|');
 
 export default verbs;

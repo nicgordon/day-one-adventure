@@ -1,6 +1,8 @@
-import _ from 'lodash';
 import constants from '../../../constants';
+import filter from 'lodash/filter';
 import gameActions from '../../../store/actions/game';
+import get from 'lodash/get';
+import includes from 'lodash/includes';
 import missions from '../../../missions';
 
 export default {
@@ -8,7 +10,7 @@ export default {
   action: (state, dispatch) => {
     // @TODO: Exclude the bonus mission from the counts
     const missionsAvailable = missions.length;
-    const missionsCompleted = _.filter(missions, mission => mission.predicate(state)).length;
+    const missionsCompleted = filter(missions, mission => mission.predicate(state)).length;
     const missionsCompletedPercentage = (missionsCompleted / missionsAvailable) * 100;
     let summary =
       'Pretty poor effort really. I’m not sure if it’s worth having you back in. Here’s a box. Pack up your stuff.';
@@ -20,7 +22,7 @@ export default {
       summary = 'You managed to get around to doing a few things, but I think you can do better.';
     }
 
-    const hasCraigsSurfboard = _.includes(_.get(state, 'present.user.inventory', []), constants.ITEM.CRAIGS_SURFBOARD);
+    const hasCraigsSurfboard = includes(get(state, 'present.user.inventory', []), constants.ITEM.CRAIGS_SURFBOARD);
     dispatch(
       gameActions.pushMessage(`Okay! Well, let’s see how you went today:<br />
       You completed ${missionsCompleted} of the total ${missionsAvailable} tasks that were available.

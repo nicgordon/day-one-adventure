@@ -1,12 +1,12 @@
-import _ from 'lodash';
 import constants from '../../../constants';
 import gameActions from '../../../store/actions/game';
+import get from 'lodash/get';
 import sceneActions from '../../../store/actions/scene';
 
 export default {
   pattern: new RegExp(`^(${constants.VERB.TURN_OFF}) (the )?coffee machine$`),
   action: (state, dispatch) => {
-    const isCoffeeMachineOff = _.get(state, `present.scenes[${constants.SCENE.KITCHEN}].coffeeMachineOff`, false);
+    const isCoffeeMachineOff = get(state, `present.scenes[${constants.SCENE.KITCHEN}].coffeeMachineOff`, false);
     dispatch(
       gameActions.pushMessage(
         isCoffeeMachineOff

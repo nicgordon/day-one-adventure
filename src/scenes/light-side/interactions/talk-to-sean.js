@@ -1,11 +1,11 @@
-import _ from 'lodash';
 import constants from '../../../constants';
 import gameActions from '../../../store/actions/game';
+import get from 'lodash/get';
 
 export default {
   pattern: new RegExp(`^(${constants.VERB.TALK}) sean$`),
   action: (state, dispatch) => {
-    const isCodeFixed = _.get(state, `present.scenes[${constants.SCENE.LIGHT_SIDE}].codeFixed`, false);
+    const isCodeFixed = get(state, `present.scenes[${constants.SCENE.LIGHT_SIDE}].codeFixed`, false);
     dispatch(
       gameActions.pushMessage(
         isCodeFixed

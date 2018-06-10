@@ -1,12 +1,12 @@
-import _ from 'lodash';
 import constants from '../../../constants';
 import gameActions from '../../../store/actions/game';
+import get from 'lodash/get';
 import sceneActions from '../../../store/actions/scene';
 
 export default {
   pattern: new RegExp(`^(${constants.VERB.YELL})`),
   action: (state, dispatch) => {
-    const craigAwake = _.get(state, `present.scenes[${constants.SCENE.CRAIGS_HOUSE}].craigAwake`, false);
+    const craigAwake = get(state, `present.scenes[${constants.SCENE.CRAIGS_HOUSE}].craigAwake`, false);
     dispatch(
       gameActions.pushMessage(
         craigAwake

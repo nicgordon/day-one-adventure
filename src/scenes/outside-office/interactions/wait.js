@@ -1,12 +1,12 @@
-import _ from 'lodash';
 import constants from '../../../constants';
 import gameActions from '../../../store/actions/game';
+import get from 'lodash/get';
 import sceneActions from '../../../store/actions/scene';
 
 export default {
   pattern: new RegExp(`^(${constants.VERB.WAIT})`),
   action: (state, dispatch) => {
-    const isRollerDoorOpen = _.get(state, `present.scenes[${constants.SCENE.OUTSIDE_OFFICE}].rollerDoorOpen`, false);
+    const isRollerDoorOpen = get(state, `present.scenes[${constants.SCENE.OUTSIDE_OFFICE}].rollerDoorOpen`, false);
     dispatch(
       gameActions.pushMessage(
         isRollerDoorOpen
