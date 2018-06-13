@@ -1,4 +1,11 @@
 import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
+import replace from 'lodash/replace';
+import toLower from 'lodash/toLower';
+import trim from 'lodash/trim';
+
+import executeCommand from '../../utils/execute-command';
+import gameActions from '../../store/actions/game';
 
 export default store => {
   // Add component handlers
@@ -8,6 +15,29 @@ export default store => {
   let halfTypedCommand = '';
 
   form.addEventListener('submit', event => {
+    event.preventDefault();
+
+    const command = toLower(trim(replace(input.value, /(>|&lt;|&gt;)/gi, '')));
+
+    if (isEmpty(command)) {
+      return;
+    }
+
+    const state = store.getState();
+
+    // Log attempted command on ga
+    ga('send', {
+      hitType: 'event',
+      eventCategory: get(state, 'present.user.location', 'Unknown'),
+      eventAction: 'command',
+      eventValue: command,
+    });
+
+    store.dispatch(gameActions.submitCommand(command));
+    executeCommand(command, state, store.dispatch);
+
+    // Reset input
+    input.value = '';
     previousCommandIndex = 0;
   });
 

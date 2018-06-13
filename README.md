@@ -12,9 +12,6 @@ Nice to haves:
  - notifications when you complete a goal
  - longer quests
 
-Definitely should:
- - add analytics
-
 v2:
  - turn it into a slackbot
 

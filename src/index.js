@@ -1,9 +1,5 @@
 import { ActionCreators as undoActions } from 'redux-undo';
 import get from 'lodash/get';
-import isEmpty from 'lodash/isEmpty';
-import replace from 'lodash/replace';
-import toLower from 'lodash/toLower';
-import trim from 'lodash/trim';
 
 import initCommandListeners from './game/init-command-listeners';
 import executeCommand from './utils/execute-command';
@@ -25,24 +21,10 @@ document.addEventListener('keypress', () => {
 });
 
 // Add component handlers
-const form = document.getElementsByClassName('form')[0];
-const input = document.getElementsByClassName('input')[0];
+initCommandListeners(store);
 const helpButton = document.getElementsByClassName('helpButton')[0];
 const undoButton = document.getElementsByClassName('undoButton')[0];
-form.addEventListener('submit', event => {
-  event.preventDefault();
 
-  const command = toLower(trim(replace(input.value, /(>|&lt;|&gt;)/gi, '')));
-
-  if (isEmpty(command)) {
-    return;
-  }
-  store.dispatch(gameActions.submitCommand(command));
-  executeCommand(command, store.getState(), store.dispatch);
-
-  // Reset input
-  input.value = '';
-});
 helpButton.addEventListener('click', () => {
   const command = 'help';
   store.dispatch(gameActions.submitCommand(command));
@@ -51,8 +33,6 @@ helpButton.addEventListener('click', () => {
 undoButton.addEventListener('click', () => {
   store.dispatch(undoActions.undo());
 });
-
-initCommandListeners(store);
 
 // Add state subscriptions
 const locationName = document.getElementsByClassName('locationName')[0];
