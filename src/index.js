@@ -5,6 +5,7 @@ import replace from 'lodash/replace';
 import toLower from 'lodash/toLower';
 import trim from 'lodash/trim';
 
+import initCommandListeners from './game/init-command-listeners';
 import executeCommand from './utils/execute-command';
 import gameActions from './store/actions/game';
 import registerServiceWorker from './registerServiceWorker';
@@ -50,6 +51,8 @@ helpButton.addEventListener('click', () => {
 undoButton.addEventListener('click', () => {
   store.dispatch(undoActions.undo());
 });
+
+initCommandListeners(store);
 
 // Add state subscriptions
 const locationName = document.getElementsByClassName('locationName')[0];
