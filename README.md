@@ -2,6 +2,8 @@
 
 Welcome to Inlight! You’ve just started your first day and you’ve got some ropes to learn and people to meet. Good luck!
 
+Play [here](https://gor.do/day-one-adventure/index.html)
+
 ## To do
 
 Nice to haves:
