@@ -30,7 +30,7 @@ export default store => {
       hitType: 'event',
       eventCategory: get(state, 'present.user.location', 'Unknown'),
       eventAction: 'command',
-      eventValue: command,
+      eventLabel: command,
     });
 
     store.dispatch(gameActions.submitCommand(command));
