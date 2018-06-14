@@ -8,7 +8,7 @@ import missions from '../../../missions';
 export default {
   pattern: new RegExp(`^y(?:es)?`),
   action: (state, dispatch) => {
-    // @TODO: Exclude the bonus mission from the counts
+    const movesTaken = get(state, 'present.game.moves', 0);
     const missionsAvailable = missions.length;
     const missionsCompleted = filter(missions, mission => mission.predicate(state)).length;
     const missionsCompletedPercentage = (missionsCompleted / missionsAvailable) * 100;
@@ -33,5 +33,12 @@ export default {
     );
     dispatch(gameActions.toggleInteractiveMode());
     dispatch(gameActions.gameOver());
+
+    ga('send', {
+      hitType: 'event',
+      eventCategory: get(state, 'present.user.location', 'Unknown'),
+      eventAction: 'end-game',
+      eventLabel: `Completed ${missionsCompleted} / ${missionsAvailable} missions in ${movesTaken} moves`,
+    });
   },
 };
