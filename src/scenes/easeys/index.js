@@ -4,6 +4,7 @@ import interactions from './interactions';
 export default {
   id: constants.SCENE.EASEYS,
   name: 'Easeys',
+  pattern: new RegExp(`easey'?s`),
   defaultState: {
     inventory: [],
   },

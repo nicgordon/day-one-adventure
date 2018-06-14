@@ -5,6 +5,7 @@ import interactions from './interactions';
 export default {
   id: constants.SCENE.TOILET,
   name: 'Toilets',
+  pattern: new RegExp('(?:the )?(?:toilets?|bath ?rooms?)'),
   defaultState: {
     toiletPaperProvided: false,
     inventory: [],

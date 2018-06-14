@@ -5,6 +5,7 @@ import interactions from './interactions';
 export default {
   id: constants.SCENE.COMMON_AREA,
   name: 'Common area',
+  pattern: new RegExp('common area'),
   defaultState: {
     inventory: [],
   },

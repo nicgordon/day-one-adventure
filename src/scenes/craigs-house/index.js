@@ -6,6 +6,7 @@ import interactions from './interactions';
 export default {
   id: constants.SCENE.CRAIGS_HOUSE,
   name: 'Craig’s house',
+  pattern: new RegExp(`craig'?s(?: house|place|joint)?`),
   defaultState: {
     craigAwake: false,
     inventory: [constants.ITEM.CRAIGS_SURFBOARD],

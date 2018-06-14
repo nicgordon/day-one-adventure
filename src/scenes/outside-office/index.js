@@ -6,6 +6,7 @@ import interactions from './interactions';
 export default {
   id: constants.SCENE.OUTSIDE_OFFICE,
   name: 'Outside Inlight HQ',
+  pattern: new RegExp('(?:outside )?inlight(?: hq)?'),
   defaultState: {
     doorOpen: false,
     rollerDoorOpen: false,

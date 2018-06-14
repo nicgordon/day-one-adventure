@@ -5,6 +5,7 @@ import interactions from './interactions';
 export default {
   id: constants.SCENE.LIGHT_SIDE,
   name: 'The light side',
+  pattern: new RegExp('(?:the )?light ?side'),
   defaultState: {
     codeFixed: false,
     designFixed: false,

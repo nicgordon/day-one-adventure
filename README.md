@@ -7,7 +7,6 @@ Play [here](https://gor.do/day-one-adventure/index.html)
 ## To do
 
 Nice to haves:
- - moving anywhere you have already been (and moving around easier in general eg. go to)
  - way more describe and check interactions
  - notifications when you complete a goal
 

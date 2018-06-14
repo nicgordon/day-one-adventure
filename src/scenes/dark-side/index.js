@@ -4,6 +4,7 @@ import interactions from './interactions';
 export default {
   id: constants.SCENE.DARK_SIDE,
   name: 'The dark side',
+  pattern: new RegExp('(?:the )?dark ?side'),
   defaultState: {
     inventory: [constants.ITEM.TOILET_PAPER],
   },

@@ -4,6 +4,7 @@ import interactions from './interactions';
 export default {
   id: constants.SCENE.FOYER,
   name: 'Entryway',
+  pattern: new RegExp('(?:the )?(?:foyer|downstairs|entry ?way)'),
   defaultState: {
     readBook: false,
     inventory: [constants.ITEM.PASSWORD_NOTE],

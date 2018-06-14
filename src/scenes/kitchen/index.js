@@ -5,6 +5,7 @@ import interactions from './interactions';
 export default {
   id: constants.SCENE.KITCHEN,
   name: 'Kitchen',
+  pattern: new RegExp('(?:the )?kitchen'),
   defaultState: {
     coffeeMachineOff: false,
     fridgeOpen: false,

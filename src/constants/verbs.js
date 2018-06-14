@@ -14,7 +14,7 @@ const verbs = {
   GIVE: 'donate|give|offer|pass',
   KNOCK: 'knock',
   MEOW: 'meow',
-  MOVE: 'go|move|run|walk',
+  MOVE: 'go(?: to)?|move(?: to)?|run(?: to)?|walk(?: to)?',
   OPEN: 'open',
   ORDER: 'ask for|buy|get|order',
   RING: 'ring',
