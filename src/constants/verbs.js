@@ -18,7 +18,7 @@ const verbs = {
   OPEN: 'open',
   ORDER: 'ask for|buy|get|order',
   RING: 'ring',
-  TALK: 'chat( to|with)?|talk( to|with)?|speak( to|with)?',
+  TALK: 'chat(?: to|with)?|talk(?: to|with)?|speak(?: to|with)?',
   TURN_OFF: 'turn off|shut down|unplug|power down|switch off|kill',
   USE: 'interact with|use',
   WAIT: 'wait',

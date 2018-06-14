@@ -7,12 +7,12 @@ import items from '../../../items';
 import map from 'lodash/map';
 import userActions from '../../../store/actions/user';
 
-const pattern = new RegExp(`^(${constants.VERB.DISCARD}) (.+)$`);
+const pattern = new RegExp(`^(?:${constants.VERB.DISCARD}) (.+)$`);
 
 export default {
   pattern,
   action: (state, dispatch, command) => {
-    const itemSearchTerm = command.match(pattern)[2];
+    const itemSearchTerm = command.match(pattern)[1];
     const currentLocation = get(state, 'present.user.location');
     const availableItems = compact(map(get(state, 'present.user.inventory', []), itemId => items[itemId]));
     const item = find(availableItems, availableItem => availableItem.pattern.test(itemSearchTerm));
