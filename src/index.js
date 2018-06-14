@@ -2,6 +2,7 @@ import { ActionCreators as undoActions } from 'redux-undo';
 import get from 'lodash/get';
 
 import initCommandListeners from './game/init-command-listeners';
+import initGoogleAnalytics from './game/init-google-analytics';
 import executeCommand from './utils/execute-command';
 import gameActions from './store/actions/game';
 import registerServiceWorker from './registerServiceWorker';
@@ -13,6 +14,8 @@ import './styles/base.css';
 import './styles/main.css';
 
 console.info('Checking the source kinda ruins the fun don’t you think?');
+
+initGoogleAnalytics();
 
 // Add document handlers
 document.addEventListener('keypress', () => {
