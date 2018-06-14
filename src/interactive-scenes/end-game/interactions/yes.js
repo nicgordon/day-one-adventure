@@ -6,7 +6,7 @@ import includes from 'lodash/includes';
 import missions from '../../../missions';
 
 export default {
-  pattern: new RegExp(`^y(es)?$`),
+  pattern: new RegExp(`^y(?:es)?`),
   action: (state, dispatch) => {
     // @TODO: Exclude the bonus mission from the counts
     const missionsAvailable = missions.length;
