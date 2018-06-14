@@ -10,7 +10,6 @@ Nice to haves:
  - moving anywhere you have already been (and moving around easier in general eg. go to)
  - way more describe and check interactions
  - notifications when you complete a goal
- - longer quests
 
 v2:
  - turn it into a slackbot
