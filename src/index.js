@@ -3,6 +3,7 @@ import get from 'lodash/get';
 
 import initCommandListeners from './game/init-command-listeners';
 import initGoogleAnalytics from './game/init-google-analytics';
+import interactiveScenes from './interactive-scenes';
 import executeCommand from './utils/execute-command';
 import gameActions from './store/actions/game';
 import registerServiceWorker from './registerServiceWorker';
@@ -50,7 +51,11 @@ const subscribeListener = () => {
     log.innerHTML = get(currentState, `present.game.log`);
     terminalContainer.scrollTop = terminalContainer.scrollHeight;
   }
-  locationName.innerText = scenes[get(currentState, `present.user.location`)].name;
+
+  // Show the current location as the scene name (or ineractive scene name if they are in one)
+  locationName.innerText =
+    get(interactiveScenes, `${get(currentState, 'present.game.interactiveScene')}.name`) ||
+    scenes[get(currentState, `present.user.location`)].name;
 };
 store.subscribe(subscribeListener);
 
