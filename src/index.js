@@ -1,13 +1,9 @@
-import { ActionCreators as undoActions } from 'redux-undo';
-import get from 'lodash/get';
-
+import attachDocumentListeners from './game/attach-document-listeners';
+import attachDomElementListeners from './game/attach-dom-element-listeners';
 import initCommandListeners from './game/init-command-listeners';
 import initGoogleAnalytics from './game/init-google-analytics';
-import interactiveScenes from './interactive-scenes';
-import executeCommand from './utils/execute-command';
-import gameActions from './store/actions/game';
+import makeStoreSubscriber from './game/make-store-subscriber';
 import registerServiceWorker from './registerServiceWorker';
-import scenes from './scenes';
 import store from './store';
 
 import './styles/reset.css';
@@ -19,47 +15,17 @@ console.info('Checking the source kinda ruins the fun don’t you think?');
 initGoogleAnalytics();
 
 // Add document handlers
-document.addEventListener('keypress', () => {
-  const input = document.getElementById('input');
-  input.focus();
-});
+attachDocumentListeners();
 
 // Add component handlers
 initCommandListeners(store);
-const helpButton = document.getElementsByClassName('helpButton')[0];
-const undoButton = document.getElementsByClassName('undoButton')[0];
+attachDomElementListeners(store);
 
-helpButton.addEventListener('click', () => {
-  const command = 'help';
-  store.dispatch(gameActions.submitCommand(command));
-  executeCommand(command, store.getState(), store.dispatch);
-});
-undoButton.addEventListener('click', () => {
-  store.dispatch(undoActions.undo());
-});
-
-// Add state subscriptions
-const locationName = document.getElementsByClassName('locationName')[0];
-const log = document.getElementsByClassName('log')[0];
-const terminalContainer = document.getElementsByClassName('terminalContainer')[0];
-
-let currentState;
-const subscribeListener = () => {
-  const previousState = currentState;
-  currentState = store.getState();
-  if (get(currentState, `present.game.log`) !== get(previousState, `present.game.log`)) {
-    log.innerHTML = get(currentState, `present.game.log`);
-    terminalContainer.scrollTop = terminalContainer.scrollHeight;
-  }
-
-  // Show the current location as the scene name (or ineractive scene name if they are in one)
-  locationName.innerText =
-    get(interactiveScenes, `${get(currentState, 'present.game.interactiveScene')}.name`) ||
-    scenes[get(currentState, `present.user.location`)].name;
-};
-store.subscribe(subscribeListener);
+// Add store subscriptions
+const storeSubscriber = makeStoreSubscriber(store);
+store.subscribe(storeSubscriber);
 
 registerServiceWorker();
 
 // Basically, do the first render
-subscribeListener();
+storeSubscriber();
