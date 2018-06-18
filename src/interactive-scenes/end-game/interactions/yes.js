@@ -22,6 +22,11 @@ export default {
       summary = 'You managed to get around to doing a few things, but I think you can do better.';
     }
 
+    const finalMessage =
+      missionsCompletedPercentage === 100
+        ? `That's it! Game over. You completed all of the available tasks. It took you ${movesTaken} moves. Congratulations.`
+        : 'Feel free to keep exploring if you’d like to complete everything';
+
     const hasCraigsSurfboard = includes(get(state, 'present.user.inventory', []), constants.ITEM.CRAIGS_SURFBOARD);
     dispatch(
       gameActions.pushMessage(`Okay! Well, let’s see how you went today:<br />
@@ -29,10 +34,13 @@ export default {
       ${summary} ${
         hasCraigsSurfboard ? 'Also, that’s Craig’s surfboard so you might want to give that back at some point.' : ''
       }<br /><br />
-      <span class="command">Game over!</span>`)
+      <span class="command">${finalMessage}</span>`)
     );
     dispatch(gameActions.toggleInteractiveMode());
-    dispatch(gameActions.gameOver());
+
+    if (missionsCompletedPercentage === 100) {
+      dispatch(gameActions.gameOver());
+    }
 
     ga('send', {
       hitType: 'event',
