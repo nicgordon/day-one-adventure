@@ -4,15 +4,9 @@ Welcome to Inlight! You’ve just started your first day and you’ve got some r
 
 Play [here](https://gor.do/day-one-adventure/index.html)
 
-## To do
-
-Nice to haves:
- - way more describe and check interactions
- - notifications when you complete a goal
-
-v2:
+## Potential v2 ideas:
  - turn it into a slackbot
 
 -----
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) although it not longer uses React 🤷‍♂️.
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) although it no longer uses React 🤷‍♂️.
